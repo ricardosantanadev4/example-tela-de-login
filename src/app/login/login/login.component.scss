@@ -32,6 +32,7 @@ mat-form-field {
 // desativa a barra azul do input do formulario que e acionada quando o usuario clica no input formulario
 ::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
     border-bottom-color: transparent;
+    // border-bottom: none;
 }
 
 .button {
