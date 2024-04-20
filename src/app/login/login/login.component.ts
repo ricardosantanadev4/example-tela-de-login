@@ -8,20 +8,19 @@ import { AuthService } from 'src/app/login/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
   form = this.formBuilder.group({
-    useremail: ['', [Validators.required]],
+    useremail: ['', Validators.required],
     password: ['', Validators.required]
   });
-
-  // @Output() newLoginEvent = new EventEmitter();
 
   constructor(private formBuilder: NonNullableFormBuilder, private authService: AuthService) { }
 
   loginSubmit() {
     if (this.form.valid) {
-      // console.log(this.form.value);
       this.authService.login(this.form);
     }
   }
+
 
 }
