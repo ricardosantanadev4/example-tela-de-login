@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './login/services/auth.service';
+import { AuthGuard } from './guards/auth-guard';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { AuthService } from './login/services/auth.service';
     BrowserAnimationsModule,
   ],
   providers: [
-    AuthService
+    AuthService, AuthGuard
   ],
   bootstrap: [AppComponent]
 })
