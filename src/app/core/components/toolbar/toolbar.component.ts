@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,4 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
+  @Output() logout = new EventEmitter<boolean>(false);
+
+  onLogout() {
+    this.logout.emit(true);
+  }
 }

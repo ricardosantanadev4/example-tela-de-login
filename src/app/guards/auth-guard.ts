@@ -13,16 +13,17 @@ export class AuthGuard implements CanActivate {
   // route: ActivatedRouteSnapshot e a rota em si
   // state: RouterStateSnapshot estado da rota
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-  //   if (this.authService.usuarioEstaAutenticado()) {
-  //     return true;
-  //   }
-  //   this.router.navigate(['/login']);
-  //   return false;
-  // }
-  if (localStorage.getItem('token')) {
-    return true;
+    //   if (this.authService.usuarioEstaAutenticado()) {
+    //     return true;
+    //   }
+    //   this.router.navigate(['/login']);
+    //   return false;
+    // }
+    if (localStorage.getItem('token')) {
+      this.authService.updateLoggedIn();
+      return true;
+    }
+    this.router.navigate(['/login']);
+    return false;
   }
-  this.router.navigate(['/login']);
-  return false;
-}
 }

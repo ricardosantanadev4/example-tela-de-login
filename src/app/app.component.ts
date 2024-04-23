@@ -10,12 +10,16 @@ import { AuthService } from './login/services/auth.service';
 export class AppComponent {
   title = 'example-tela-de-login';
   isLoggedIn$: Observable<boolean>;
-  mostrarMenu: boolean = false;
+  // mostrarMenu: boolean = false;
 
   constructor(private authService: AuthService) {
     this.isLoggedIn$ = this.authService.isLoggedIn$;
-    this.authService.mostrarMenuEmitter.subscribe(
-      mostrar => this.mostrarMenu = mostrar
-    );
+    // this.authService.mostrarMenuEmitter.subscribe(
+    //   mostrar => this.mostrarMenu = mostrar
+    // );
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }
