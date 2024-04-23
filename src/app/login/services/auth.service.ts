@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Credentials } from '../models/credentials';
 import { BehaviorSubject } from 'rxjs'
@@ -33,7 +33,6 @@ export class AuthService {
       console.log('Usuário não autenticado!');
     }
   }
-
 
   logout() {
     localStorage.clear();
