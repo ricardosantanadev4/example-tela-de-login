@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <!-- <span></span> -->
+    <img class="logo" mat-card-image src="../../../../assets/logo-2x_2_em_branco.png" alt="Logo">
+    <span class="example-spacer"></span>
+    <img class="avatar" mat-card-image src="../../../../assets/avatar.jpg.jpeg" alt="Avatar">
+    <button class="user" mat-button [matMenuTriggerFor]="menuAdm">
+        Administrador
+        <mat-icon class="arrow_drop_down">arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menuAdm="matMenu">
+        <button mat-menu-item>
+            Alterar Senha
+        </button>
+        <button mat-menu-item>Sair</button>
+    </mat-menu>
+</mat-toolbar>
