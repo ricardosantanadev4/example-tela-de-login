@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { NonNullableFormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/login/services/auth.service';
 
 @Component({
@@ -14,13 +14,14 @@ export class LoginComponent {
     password: ['', Validators.required]
   });
 
-  constructor(private formBuilder: NonNullableFormBuilder, private authService: AuthService) { }
+  constructor(private formBuilder: UntypedFormBuilder, private authService: AuthService) {
+    this.authService.logout();
+  }
 
   loginSubmit() {
     if (this.form.valid) {
-      this.authService.login(this.form);
+      this.authService.login(this.form.value);
     }
+
   }
-
-
 }
