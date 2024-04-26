@@ -9,6 +9,7 @@ import { AuthGuard } from './guards/auth-guard';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
 import { LoginComponent } from './login/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './login/login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialModule
+    AppMaterialModule,
+    HttpClientModule
   ],
   providers: [
     AuthService, AuthGuard
