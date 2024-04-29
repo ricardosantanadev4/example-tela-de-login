@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Credentials } from '../models/credentials';
-import { BehaviorSubject } from 'rxjs'
+import { BehaviorSubject, catchError, of } from 'rxjs'
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -29,7 +29,10 @@ export class AuthService {
     // }
     console.log(credentials);
     return this.http.post(this.authUrl, credentials)
-      .subscribe(data => this.loginSucess(JSON.parse(JSON.stringify(data)).acessTonkenm));
+      .subscribe({
+        next: data => this.loginSucess(JSON.parse(JSON.stringify(data)).acessTonkenm),
+        error: (err) => console.log(err)
+      });
   }
 
   loginSucess(credentials: string) {
@@ -41,10 +44,10 @@ export class AuthService {
   }
 
   // loginError() {
-  //   console.log('else')
-  //   localStorage.clear();
-  //   this.loggedIn.next(false);
-  //   console.log('Usuário não autenticado!');
+  // console.log('else')
+  // localStorage.clear();
+  // this.loggedIn.next(false);
+  // console.log('Usuário não autenticado!');
   // }
 
   logout() {
