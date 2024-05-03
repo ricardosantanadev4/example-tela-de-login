@@ -1,1 +1,55 @@
-
+<mat-tab-group animationDuration="100ms" disableRipple="true">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">home</mat-icon>
+            Home
+        </ng-template>
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link> Dashbord </a>
+            <a mat-tab-link> Monitor Geral </a>
+            <a mat-tab-link> Dashbord Campanha </a>
+            <a mat-tab-link> Monitor Do Agente </a>
+        </nav>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">call</mat-icon>
+            Telefonia
+        </ng-template>
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link> Telefonia </a>
+            <a mat-tab-link> Espião </a>
+            <a mat-tab-link> Siga-me </a>
+            <a mat-tab-link> URA </a>
+            <a mat-tab-link> Agenda </a>
+            <a mat-tab-link> Campanha </a>
+        </nav>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">wysiwyg</mat-icon>
+            Relatório
+        </ng-template>
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link> Chamadas </a>
+            <a mat-tab-link> Campanhas Registros </a>
+            <a mat-tab-link> Consultas Portabilidade </a>
+            <a mat-tab-link> Log de Agentes </a>
+        </nav>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">handyman</mat-icon>
+            Administração
+        </ng-template>
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link> Usuário </a>
+            <a mat-tab-link> Histórico </a>
+            <a mat-tab-link> Perfil </a>
+            <a mat-tab-link> Permissão de Contexto </a>
+            <a mat-tab-link> Servidor </a>
+            <a mat-tab-link> Clientes </a>
+            <a mat-tab-link> Agente </a>
+        </nav>
+    </mat-tab>
+</mat-tab-group>
